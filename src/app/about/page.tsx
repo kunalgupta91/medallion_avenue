@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -6,16 +7,20 @@ import { Reveal, RevealGroup } from "@/components/animations/Reveal";
 import { trustSignals } from "@/content/trust-signals";
 import { projectHighlights } from "@/content/highlights";
 
-export const metadata: Metadata = {
+const path = "/about";
+
+export const metadata: Metadata = pageMetadata({
   title: "About the Project",
   description:
     "Medallion Avenue is an ultra-luxury residential and commercial development on the Kalka-Shimla Highway, adjoining Chandimandir Toll Plaza — built with MIVAN construction across 70% green, 30% built land.",
-};
+  path,
+});
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
+        path={path}
         eyebrow="About the Project"
         breadcrumbLabel="About"
         title="An Address Built on a Genuine Gap in the Market"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -12,16 +13,20 @@ import {
 } from "@/content/residential";
 import { amenities } from "@/content/amenities";
 
-export const metadata: Metadata = {
+const path = "/residential";
+
+export const metadata: Metadata = pageMetadata({
   title: "Residential",
   description:
     "3+1 & 4+1 BHK luxury residences at Medallion Avenue — Stilt+14 towers built with MIVAN construction, set within 70% green landscaped area on the Kalka-Shimla Highway.",
-};
+  path,
+});
 
 export default function ResidentialPage() {
   return (
     <>
       <PageHero
+        path={path}
         eyebrow="Residential"
         breadcrumbLabel="Residential"
         title="Homes Designed Around Space, Light & Green"

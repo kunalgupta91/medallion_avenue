@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { TrendingUp } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
@@ -13,16 +14,20 @@ import {
   commercialUnitSizes,
 } from "@/content/commercial";
 
-export const metadata: Metadata = {
+const path = "/commercial";
+
+export const metadata: Metadata = pageMetadata({
   title: "Commercial Spaces",
   description:
     "Medallion Avenue's Ground+4 commercial precinct on the Kalka-Shimla Highway — the only high-end commercial address between Zirakpur and Shimla, leasing to Grade-A hotel, dining, and retail brands.",
-};
+  path,
+});
 
 export default function CommercialPage() {
   return (
     <>
       <PageHero
+        path={path}
         eyebrow="Commercial"
         breadcrumbLabel="Commercial"
         title="The Only High-End Commercial Address on the Corridor"

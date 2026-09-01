@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/animations/Reveal";
 import { ConstructionTimelineSection } from "@/components/sections/ConstructionTimelineSection";
 
-export const metadata: Metadata = {
+const path = "/construction-progress";
+
+export const metadata: Metadata = pageMetadata({
   title: "Construction Progress",
   description:
     "Track construction progress at Medallion Avenue — from land development and MIVAN structural work to amenities and handover.",
-};
+  path,
+});
 
 export default function ConstructionProgressPage() {
   return (
     <>
       <PageHero
+        path={path}
         eyebrow="Construction Progress"
         breadcrumbLabel="Construction Progress"
         title="Building Medallion Avenue, Stage by Stage"

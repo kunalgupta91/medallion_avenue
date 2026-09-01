@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -7,16 +8,20 @@ import { LeadForm } from "@/components/LeadForm";
 import { WhatsappIcon } from "@/components/icons/SocialIcons";
 import { siteConfig } from "@/content/site";
 
-export const metadata: Metadata = {
+const path = "/contact";
+
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
     "Get in touch with Medallion Avenue — book a site visit, request the brochure, or ask a question on WhatsApp.",
-};
+  path,
+});
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
+        path={path}
         eyebrow="Contact"
         breadcrumbLabel="Contact"
         title="Let's Plan Your Visit"

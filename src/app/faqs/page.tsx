@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import {
   Accordion,
@@ -9,15 +10,37 @@ import {
 import { Reveal } from "@/components/animations/Reveal";
 import { faqs } from "@/content/faq";
 
-export const metadata: Metadata = {
+const path = "/faqs";
+
+export const metadata: Metadata = pageMetadata({
   title: "FAQs",
-  description: "Frequently asked questions about Medallion Avenue.",
+  description:
+    "Location, residential configurations, MIVAN construction, RERA status, and site visits — answers to common questions about Medallion Avenue.",
+  path,
+});
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
 };
 
 export default function FAQsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHero
+        path={path}
         eyebrow="FAQs"
         breadcrumbLabel="FAQs"
         title="Common Questions, Answered"

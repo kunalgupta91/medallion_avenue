@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal, RevealGroup } from "@/components/animations/Reveal";
 import { landmarks, locationAdvantages } from "@/content/location";
 import { siteConfig } from "@/content/site";
 
-export const metadata: Metadata = {
+const path = "/location";
+
+export const metadata: Metadata = pageMetadata({
   title: "Location",
   description:
     "Medallion Avenue is located on the Kalka-Shimla Highway, adjoining Chandimandir Toll Plaza — with strong connectivity across the Panchkula-Chandigarh tricity belt.",
-};
+  path,
+});
 
 export default function LocationPage() {
   return (
     <>
       <PageHero
+        path={path}
         eyebrow="Location"
         breadcrumbLabel="Location"
         title="Where the Highway Meets the Hills"

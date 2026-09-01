@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/animations/Reveal";
@@ -8,16 +9,20 @@ import { priceListNote, priceListDownloadUrl } from "@/content/downloads";
 import { apartmentTypes } from "@/content/residential";
 import { commercialUnitSizes } from "@/content/commercial";
 
-export const metadata: Metadata = {
+const path = "/price-list";
+
+export const metadata: Metadata = pageMetadata({
   title: "Price List",
   description:
     "Request the latest residential and commercial price list for Medallion Avenue on WhatsApp.",
-};
+  path,
+});
 
 export default function PriceListPage() {
   return (
     <>
       <PageHero
+        path={path}
         eyebrow="Price List"
         breadcrumbLabel="Price List"
         title="Get the Latest Pricing on WhatsApp"

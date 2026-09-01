@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal, RevealGroup } from "@/components/animations/Reveal";
@@ -6,16 +7,20 @@ import { LeadDialog } from "@/components/LeadDialog";
 import { Button } from "@/components/ui/button";
 import { floorPlans } from "@/content/downloads";
 
-export const metadata: Metadata = {
+const path = "/floor-plans";
+
+export const metadata: Metadata = pageMetadata({
   title: "Floor Plans",
   description:
     "Floor plans for 3+1 BHK, 4+1 BHK residences and commercial units at Medallion Avenue — request the latest layouts on WhatsApp.",
-};
+  path,
+});
 
 export default function FloorPlansPage() {
   return (
     <>
       <PageHero
+        path={path}
         eyebrow="Floor Plans"
         breadcrumbLabel="Floor Plans"
         title="Layouts for Every Way of Living &amp; Doing Business"

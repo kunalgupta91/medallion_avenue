@@ -2,22 +2,38 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Reveal } from "@/components/animations/Reveal";
+import { siteConfig } from "@/content/site";
 
 export function PageHero({
   eyebrow,
   title,
   description,
   breadcrumbLabel,
+  path,
   children,
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   breadcrumbLabel: string;
+  path: string;
   children?: ReactNode;
 }) {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { "@type": "ListItem", position: 2, name: breadcrumbLabel, item: `${siteConfig.url}${path}` },
+    ],
+  };
+
   return (
     <section className="relative overflow-hidden bg-charcoal pt-36 pb-20 text-ivory">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.15]"
         style={{
