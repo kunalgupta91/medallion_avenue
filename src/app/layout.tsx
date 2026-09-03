@@ -115,7 +115,8 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-2LQ077T98T');`}
+          gtag('config', 'G-2LQ077T98T');
+          gtag('config', 'AW-18386203496');`}
         </Script>
         <SmoothScrollProvider>
           <Header />
