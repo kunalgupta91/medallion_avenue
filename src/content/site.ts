@@ -4,9 +4,7 @@ export const siteConfig = {
   description:
     "Medallion Avenue is an ultra-luxury residential and commercial address on the Kalka-Shimla Highway, adjoining Chandimandir Toll Plaza — built with MIVAN construction across 30% built form and 70% lush green area.",
   url: "https://www.medallionavenue.in",
-  // TODO: replace with a purpose-made 1200x630 branded social-share graphic — this is a real site
-  // photo used as a stopgap because /images/og-image.jpg didn't exist (every share preview 404'd).
-  ogImage: "/images/site/site-garden-01.jpg",
+  ogImage: "/images/og/medallion-avenue-og.jpg",
 
   location: {
     line1: "Medallion Avenue",
