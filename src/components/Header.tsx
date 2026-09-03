@@ -42,14 +42,14 @@ export function Header() {
       )}
     >
       <div className="section-container flex h-20 items-center justify-between">
-        <Logo />
+        <Logo dark={!scrolled} />
 
         <nav className="hidden items-center gap-8 lg:flex">
           {primaryLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-sans text-sm tracking-wide text-ink/80 transition-colors hover:text-gold"
+              className="font-sans text-sm tracking-wide text-gold underline-offset-4 transition-all hover:underline"
             >
               {link.label}
             </Link>
@@ -59,7 +59,7 @@ export function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={`tel:${siteConfig.contact.callNumber}`}
-            className="flex items-center gap-2 text-sm text-ink/80 hover:text-gold"
+            className="flex items-center gap-2 text-sm text-gold underline-offset-4 transition-all hover:underline"
           >
             <Phone className="size-4" />
             {siteConfig.contact.callDisplay}
@@ -84,7 +84,10 @@ export function Header() {
         <Sheet>
           <SheetTrigger
             aria-label="Open menu"
-            className="flex items-center justify-center rounded-full border border-sand/70 p-2 lg:hidden"
+            className={cn(
+              "flex items-center justify-center rounded-full border p-2 lg:hidden transition-colors",
+              scrolled ? "border-sand/70 text-ink" : "border-ivory/30 text-ivory"
+            )}
           >
             <Menu className="size-5" />
           </SheetTrigger>
