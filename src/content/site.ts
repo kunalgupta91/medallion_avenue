@@ -17,16 +17,16 @@ export const siteConfig = {
   },
 
   contact: {
-    whatsappNumber: "917840081118",
-    whatsappDisplay: "+91 78400 81118",
-    callNumber: "+917840081118",
-    callDisplay: "+91 78400 81118",
+    whatsappNumber: "917988332209",
+    whatsappDisplay: "+91 79883 32209",
+    callNumber: "+917988332209",
+    callDisplay: "+91 79883 32209",
     email: "sales@medallionavenue.in",
     emailIsPlaceholder: true,
   },
 
   social: {
-    whatsapp: "https://wa.me/917840081118",
+    whatsapp: "https://wa.me/917988332209",
     facebook: "https://facebook.com/medallionavenue",
     instagram: "https://instagram.com/medallionavenue",
     isPlaceholder: true,
