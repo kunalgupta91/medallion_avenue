@@ -42,8 +42,16 @@ export function HeroSection() {
         }}
       />
 
-      <div className="section-container relative grid w-full gap-10 pt-32 pb-16 lg:grid-cols-[1.5fr_1fr] lg:items-start lg:gap-12">
-        <div>
+      <motion.div
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="relative z-40 mx-auto w-full max-w-sm px-6 pt-24 md:fixed md:top-28 md:right-6 md:z-40 md:mx-0 md:w-80 md:px-0 md:pt-0"
+      >
+        <QuickEnquiryCard />
+      </motion.div>
+
+      <div className="section-container relative w-full pt-6 pb-16 md:pt-32">
         <motion.span
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -139,16 +147,6 @@ export function HeroSection() {
               <p className="mt-1 text-xs tracking-wide text-ivory/60 uppercase">{stat.label}</p>
             </div>
           ))}
-        </motion.div>
-      </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="lg:mt-1"
-        >
-          <QuickEnquiryCard className="mx-auto max-w-sm lg:mx-0 lg:max-w-none" />
         </motion.div>
       </div>
     </section>

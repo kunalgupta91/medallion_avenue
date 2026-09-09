@@ -72,7 +72,7 @@ export function QuickEnquiryCard({ className }: { className?: string }) {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className={`space-y-3 rounded-2xl border border-sand/70 bg-white/95 p-5 shadow-xl shadow-black/10 backdrop-blur ${className ?? ""}`}
+      className={`space-y-3 rounded-2xl border border-sand/70 bg-white/95 p-5 text-ink shadow-xl shadow-black/10 backdrop-blur ${className ?? ""}`}
     >
       <p className="font-display text-base text-ink">Get a Callback</p>
 
