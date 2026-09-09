@@ -5,6 +5,8 @@ export type LeadFormValues = {
   phone: string;
   email?: string;
   interest?: string;
+  budget?: string;
+  callTime?: string;
   message?: string;
 };
 
@@ -18,6 +20,8 @@ export function buildWhatsappLeadUrl(
     `Phone: ${values.phone}`,
     values.email ? `Email: ${values.email}` : null,
     values.interest ? `Interested in: ${values.interest}` : null,
+    values.budget ? `Budget: ${values.budget}` : null,
+    values.callTime ? `Preferred Time to Call: ${values.callTime}` : null,
     values.message ? `Message: ${values.message}` : null,
   ].filter(Boolean);
 

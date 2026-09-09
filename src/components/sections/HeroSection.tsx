@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { Download, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LeadDialog } from "@/components/LeadDialog";
+import { QuickEnquiryCard } from "@/components/QuickEnquiryCard";
+import { VisitCounter } from "@/components/VisitCounter";
 import { siteConfig } from "@/content/site";
 import { Counter } from "@/components/animations/Counter";
 
@@ -40,7 +42,8 @@ export function HeroSection() {
         }}
       />
 
-      <div className="section-container relative w-full pt-32 pb-16">
+      <div className="section-container relative grid w-full gap-10 pt-32 pb-16 lg:grid-cols-[1.5fr_1fr] lg:items-start lg:gap-12">
+        <div>
         <motion.span
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,6 +52,15 @@ export function HeroSection() {
         >
           Kalka–Shimla Highway · Adjoining Chandimandir Toll Plaza
         </motion.span>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.05 }}
+          className="mt-4"
+        >
+          <VisitCounter className="flex items-center gap-1.5 text-xs font-medium text-ivory/65" />
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -127,6 +139,16 @@ export function HeroSection() {
               <p className="mt-1 text-xs tracking-wide text-ivory/60 uppercase">{stat.label}</p>
             </div>
           ))}
+        </motion.div>
+      </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="lg:mt-1"
+        >
+          <QuickEnquiryCard className="mx-auto max-w-sm lg:mx-0 lg:max-w-none" />
         </motion.div>
       </div>
     </section>

@@ -105,6 +105,14 @@ export function Footer() {
             and layouts are indicative and subject to change without prior notice. Amenities and
             timelines are subject to approvals from competent authorities.
           </p>
+          <div className="flex gap-4">
+            <Link href="/privacy-policy" className="hover:text-ivory">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-and-conditions" className="hover:text-ivory">
+              Terms &amp; Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
