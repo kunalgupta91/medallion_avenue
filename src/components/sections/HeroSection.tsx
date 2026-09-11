@@ -6,6 +6,7 @@ import { Download, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LeadDialog } from "@/components/LeadDialog";
 import { QuickEnquiryCard } from "@/components/QuickEnquiryCard";
+import { QuickEnquiryDialog } from "@/components/QuickEnquiryDialog";
 import { VisitCounter } from "@/components/VisitCounter";
 import { siteConfig } from "@/content/site";
 import { Counter } from "@/components/animations/Counter";
@@ -46,12 +47,14 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="relative z-40 mx-auto w-full max-w-sm px-6 pt-24 md:fixed md:top-28 md:right-6 md:z-40 md:mx-0 md:w-80 md:px-0 md:pt-0"
+        className="fixed top-28 right-6 z-40 hidden w-80 md:block"
       >
         <QuickEnquiryCard />
       </motion.div>
 
-      <div className="section-container relative w-full pt-6 pb-16 md:pt-32">
+      <QuickEnquiryDialog className="fixed top-24 right-4 z-40 md:hidden" />
+
+      <div className="section-container relative w-full pt-32 pb-16">
         <motion.span
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

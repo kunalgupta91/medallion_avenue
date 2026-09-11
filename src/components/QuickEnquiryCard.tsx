@@ -31,7 +31,13 @@ const callTimeOptions = [
   "Anytime",
 ];
 
-export function QuickEnquiryCard({ className }: { className?: string }) {
+export function QuickEnquiryCard({
+  className,
+  variant = "card",
+}: {
+  className?: string;
+  variant?: "card" | "plain";
+}) {
   const [submitted, setSubmitted] = useState(false);
   const {
     register,
@@ -72,9 +78,13 @@ export function QuickEnquiryCard({ className }: { className?: string }) {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className={`space-y-3 rounded-2xl border border-sand/70 bg-white/95 p-5 text-ink shadow-xl shadow-black/10 backdrop-blur ${className ?? ""}`}
+      className={`space-y-3 text-ink ${
+        variant === "card"
+          ? "rounded-2xl border border-sand/70 bg-white/95 p-5 shadow-xl shadow-black/10 backdrop-blur"
+          : ""
+      } ${className ?? ""}`}
     >
-      <p className="font-display text-base text-ink">Get a Callback</p>
+      {variant === "card" && <p className="font-display text-base text-ink">Get a Callback</p>}
 
       <div className="space-y-1">
         <Label htmlFor="quick-enquiry-name" className="text-xs">
