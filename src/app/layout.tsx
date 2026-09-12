@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingBar } from "@/components/FloatingBar";
+import { LeadCapturePopup } from "@/components/LeadCapturePopup";
 import { SmoothScrollProvider } from "@/components/animations/SmoothScrollProvider";
 import { siteConfig } from "@/content/site";
 
@@ -147,6 +148,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <FloatingBar />
+          <LeadCapturePopup />
         </SmoothScrollProvider>
       </body>
     </html>
